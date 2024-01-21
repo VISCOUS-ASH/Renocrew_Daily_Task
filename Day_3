@@ -1,0 +1,48 @@
+//This contains practice set for day 3
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("ENTER QUESTION NUMBER FROM 1 TO 5 WHICH ARE PRACTICE SET QUESTIONS :");
+    Scanner sc = new Scanner(System.in);
+    int question = sc.nextInt();
+    switch (question)
+      {
+        case 1:
+          // Question1
+          String name = "Jack Prabhakar";
+          name = name.toLowerCase();
+          System.out.println(name);
+          break;
+        case 2:
+          // Question2
+          String text = "To My     Friend";
+          text = text.replace(" ", "_");
+          System.out.println(text);
+          break;
+        case 3:
+          // Question3
+          String letter = "Dear <|name|>, Thanks a lot!";
+          letter = letter.replace("<|name|>", "Ashutosh");
+          System.out.println(letter);
+                 break;
+        case 4:
+          // Question4
+          String myString = "This string contains double and  triple spaces";
+          System.out.println(myString.indexOf("  "));
+          System.out.println(myString.indexOf("   "));
+          break;
+        case 5:
+          // Question5
+          String myLetter = "Dear Ashutosh,\n\tThis Java Course is very Nice.\nHello!";
+          System.out.println(myLetter);
+          break;
+
+        default:
+          System.out.println("Invalid Input");
+          break;
+      }
+    sc.close();
+  
+  }
+}
