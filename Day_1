@@ -1,0 +1,77 @@
+//This is the daily task and practice set of day 1
+import java.util.Scanner;
+
+class Main {
+  public static void main(String[] args) {
+    System.out.println("ENTER QUESTION NUMBER FROM 1 TO 6");
+    Scanner sc = new Scanner(System.in);
+    int question = sc.nextInt();
+    switch (question)
+      {
+        case 1:
+          // Question1
+                 int a = 4;
+                 int b = 17;
+                 int c =6;
+                 int sum = a + b+c;
+                 System.out.println(sum);
+          break;
+        case 2:
+          // Question2
+             float subject1 = 45;
+             float subject2 = 95;
+             float subject3 = 48;
+             float cgpa = (subject1 + subject2 +subject3)/30;
+             System.out.println(cgpa);
+          break;
+        case 3:
+          // Question3
+          System.out.println("What is your name");
+                 String name = sc.next();
+                 System.out.println("Hello " + name + " have a good day!");
+                 break;
+        case 4:
+          // Question4
+          double kilometers;
+
+          System.out.println("Please enter kilometers:");
+          kilometers = sc.nextDouble();
+
+          double miles = kilometers / 1.6;
+
+          System.out.println(miles + " Miles");
+          break;
+        case 5:
+          // Question5
+          System.out.println("Enter your number");
+          System.out.println(sc.hasNextInt());
+          break;
+
+        case 6:
+          // task1
+          // Input marks for 5 subjects
+          double[] marks = new double[5];
+          for (int i = 0; i < 5; i++) {
+              System.out.print("Enter marks for subject " + (i + 1) + " out of 100: ");
+              marks[i] = sc.nextDouble();
+          }
+
+          // Calculate percentage
+          double totalMarks = 0;
+          for (double mark : marks) {
+              totalMarks += mark;
+          }
+
+          int subjects = marks.length;
+          double percentage = (totalMarks / (subjects * 100)) * 100;
+
+          // Display percentage
+          System.out.printf("\nPercentage: %.2f%%\n", percentage);
+          
+        default:
+          System.out.println("Invalid Input");
+          break;
+      }
+  
+  }
+}
