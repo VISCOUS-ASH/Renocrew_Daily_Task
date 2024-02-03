@@ -1,0 +1,114 @@
+vpackage com.codewithharry.shape;
+
+  public class Rectangle {
+      protected double length;
+      protected double width;
+
+      public Rectangle(double length, double width) {
+          this.length = length;
+          this.width = width;
+      }
+
+      public double getLength() {
+          return length;
+      }
+
+      public void setLength(double length) {
+          this.length = length;
+      }
+
+      public double getWidth() {
+          return width;
+      }
+
+      public void setWidth(double width) {
+          this.width = width;
+      }
+
+      public double area() {
+          return length * width;
+      }
+
+      public double perimeter() {
+          return 2 * (length + width);
+      }
+  }
+
+  public class Square extends Rectangle {
+      public Square(double side) {
+          super(side, side);
+      }
+
+      public double getSide() {
+          return length; // or width, since they're the same
+      }
+
+      public void setSide(double side) {
+          this.length = side;
+          this.width = side;
+      }
+  }
+
+  public class Circle {
+      private double radius;
+
+      public Circle(double radius) {
+          this.radius = radius;
+      }
+
+      public double getRadius() {
+          return radius;
+      }
+
+      public void setRadius(double radius) {
+          this.radius = radius;
+      }
+
+      public double area() {
+          return Math.PI * radius * radius;
+      }
+
+      public double circumference() {
+          return 2 * Math.PI * radius;
+      }
+  }
+
+  public class Cylinder extends Circle {
+      private double height;
+
+      public Cylinder(double radius, double height) {
+          super(radius);
+          this.height = height;
+      }
+
+      public double getHeight() {
+          return height;
+      }
+
+      public void setHeight(double height) {
+          this.height = height;
+      }
+
+      public double volume() {
+          return area() * height;
+      }
+
+      public double surfaceArea() {
+          return 2 * Math.PI * getRadius() * (getRadius() + height);
+      }
+  }
+
+  public class Sphere extends Circle {
+      public Sphere(double radius) {
+          super(radius);
+      }
+
+      @Override
+      public double area() {
+          return 4 * super.area();
+      }
+
+      public double volume() {
+          return (4.0 / 3.0) * Math.PI * Math.pow(getRadius(), 3);
+      }
+  }
